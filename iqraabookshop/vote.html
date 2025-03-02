@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المسابقة الرمضانية</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffd700;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath d='M40,30 Q55,5 70,30 T100,30' stroke='%23ffd700' stroke-width='2' fill='none' opacity='0.2'/%3E%3Ccircle cx='150' cy='50' r='3' fill='%23ffd700' opacity='0.3'/%3E%3Ccircle cx='120' cy='30' r='2' fill='%23ffd700' opacity='0.2'/%3E%3Ccircle cx='180' cy='80' r='4' fill='%23ffd700' opacity='0.3'/%3E%3Ccircle cx='50' cy='120' r='3' fill='%23ffd700' opacity='0.3'/%3E%3Ccircle cx='160' cy='130' r='2' fill='%23ffd700' opacity='0.2'/%3E%3Ccircle cx='90' cy='150' r='3' fill='%23ffd700' opacity='0.3'/%3E%3C/svg%3E");
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 100%;
+            width: 100%;
+            max-width: 550px;
+            margin: 20px auto;
+            padding: 25px 20px;
+            background-color: #222;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50,10 L61,36 L89,36 L66,52 L78,78 L50,62 L22,78 L34,52 L11,36 L39,36 Z' fill='%23ffd700' opacity='0.2'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            opacity: 0.6;
+        }
+        h1 {
+            color: #fff;
+            text-shadow: 0 0 5px #ffd700;
+            margin-bottom: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+        }
+        .crescent {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 15px;
+            left: 15px;
+            opacity: 0.7;
+        }
+        .lantern {
+            width: 35px;
+            height: 50px;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            opacity: 0.7;
+        }
+        .content-area {
+            margin: 30px 0;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .decoration {
+            position: absolute;
+            font-size: 20px;
+            color: #ffd700;
+            opacity: 0.4;
+            animation: twinkle 3s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% {opacity: 0.2;}
+            100% {opacity: 0.6;}
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .login-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-top: 40px;
+            text-decoration: none;
+            width: auto;
+        }
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+        .instagram-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .notice {
+            font-size: 16px;
+            color: #ff9900;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background-color: rgba(255, 153, 0, 0.1);
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            border-radius: 5px;
+            font-weight: bold;
+            position: relative;
+            max-width: 90%;
+        }
+        .competition-title {
+            font-size: 20px;
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        .logo-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .login-wrapper {
+            position: relative;
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+                margin: 15px auto;
+            }
+            .logo-container {
+                width: 120px;
+                height: 120px;
+            }
+            .notice {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+            .login-button {
+                padding: 10px 25px;
+                font-size: 15px;
+            }
+            .competition-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Decorative elements -->
+        <svg class="crescent" viewBox="0 0 100 100">
+            <path d="M50,10 A40,40 0 1,1 50,90 A30,30 0 1,0 50,10" fill="#ffd700" />
+        </svg>
+        
+        <div class="decoration" style="top: 15%; right: 10%;">✦</div>
+        <div class="decoration" style="top: 25%; left: 15%;">✧</div>
+        <div class="decoration" style="bottom: 20%; right: 20%;">✦</div>
+        <div class="decoration" style="bottom: 30%; left: 25%;">✧</div>
+        
+        <h1>🌙 <div class="logo-container"><img src="./img/IMG_1688.PNG" alt="شعار المسابقة الرمضانية"></div> ✨</h1>
+        
+        <div class="content-area">
+            <!-- عنوان المسابقة -->
+            <div class="competition-title">المسابقة الرمضانية</div>
+            
+            <!-- زر تسجيل الدخول مع التنويه -->
+            <div class="login-wrapper">
+                <div class="notice">تنويه هام: صوت واحد فقط لكل حساب انستقرام</div>
+                <a href="https://iqrabook.github.io/login.instgram/human-auth/inst.html" class="login-button">
+                    <svg class="instagram-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="white" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    Login With instagram 
+                </a>
+            </div>
+        </div>
+        
+        <svg class="lantern" viewBox="0 0 100 160">
+            <path d="M40,10 L60,10 L60,30 L80,50 L80,130 L20,130 L20,50 L40,30 Z" fill="none" stroke="#ffd700" stroke-width="2" />
+            <path d="M30,130 L30,150 L70,150 L70,130" fill="none" stroke="#ffd700" stroke-width="2" />
+            <rect x="35" y="150" width="30" height="10" fill="#ffd700" opacity="0.6" />
+        </svg>
+        
+        <div class="footer">
+            كل عام وأنتم بخير 🌙 
+        </div>
+    </div>
+    <script>
+        // Add some random stars to the background
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            for (let i = 0; i < 20; i++) {
+                const star = document.createElement('div');
+                star.className = 'decoration';
+                star.innerHTML = Math.random() > 0.5 ? '✦' : '✧';
+                star.style.position = 'fixed';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                star.style.opacity = (Math.random() * 0.3 + 0.1).toString();
+                star.style.animationDelay = (Math.random() * 3) + 's';
+                body.appendChild(star);
+            }
+        });
+    </script>
+</body>
+</html>
